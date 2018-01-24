@@ -1,6 +1,65 @@
 html {
-    position: relative;
+
     height: 100%;
-	background: url(../images/background.jpg) no-repeat center fixed;
+    background: url(../images/background.jpg) no-repeat center fixed;
     background-size: cover;
+}
+
+body {
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+	    font-size: 36px;
+    margin: 0px 0px;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 20px 0px;
+}
+
+.container {
+    position: relative;
+    padding: 20px;
+}
+
+.title {
+	float: right;
+}
+
+.idleArea,
+.playerArea,
+.defenderArea {
+    width: 100%;
+    margin: 0px;
+    float: left;
+}
+
+.thumbnail {
+    width: 75px;
+    height: 90px;
+}
+
+.charname,
+.hitpoints {
+    margin: 2px;
+}
+
+
+#char1,
+#char2,
+#char3,
+#char4 {
+    display: inline-block;
+    color: white;
+    border: 2px solid white;
+    margin: 0px;
+    padding: 3px 10px;
+    background-color: blue;
+    text-align: center;
 }
