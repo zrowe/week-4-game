@@ -28,8 +28,13 @@ h2 {
     padding: 20px;
 }
 
+.hero {
+    border: 1px solid;
+}
+
 .title {
     float: right;
+    width:30%;
 }
 
 .idle-area,
@@ -39,6 +44,10 @@ h2 {
     width: 100%;
     margin: 0px;
     float: left;
+}
+
+.idle-area {
+    width: 70%;    
 }
 
 .thumbnail {
@@ -60,4 +69,10 @@ h2 {
     padding: 3px 10px;
     background-color: blue;
     text-align: center;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }

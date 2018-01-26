@@ -1,3 +1,5 @@
+var debug = 1
+
 $(document).ready(function() {
 
     // Blueprint for a character
@@ -43,18 +45,18 @@ $(document).ready(function() {
     // Handlers:
 
     // Do stuff when the reset button is pressed
-    // Reset: 	set all to idle
-    //				 	set currentHealthPoints = baseHealthPoints
-    //					set currentAttackPoints = baseAttackPoints 
-    // 					set gameIdle -- indicate initial state
+    // Reset:   set all to idle
+    //                  set currentHealthPoints = baseHealthPoints
+    //                  set currentAttackPoints = baseAttackPoints 
+    //                  set gameIdle -- indicate initial state
 
 
     $("reset-button").on("click", function() {
         // initialize characters
-        //			set current values to base values
-        //			set state to idle
+        //          set current values to base values
+        //          set state to idle
         // initialize display
-
+        if (debug) { console.log("reset-button:") };
         //  characters.foreach  rather use foreach.
         for (i = 0; i < characters.length; i++) {
             i.reset();
@@ -67,6 +69,7 @@ $(document).ready(function() {
     // when an idle is clicked, it becomes player.  All others become enemy.
     // (no more idles)
     $("idle-char").on("click", function() {
+        if (debug) { console.log("idle Char:") };
         // Move this.character to player.
         // Move idle characters to enemy. 
     });
@@ -74,16 +77,18 @@ $(document).ready(function() {
 
     // Do stuff when an enemy character is clicked
     // if there are more enemies:
-    // 	when an enemy is clicked, it becomes defender.  other enemies remain. 
+    //  when an enemy is clicked, it becomes defender.  other enemies remain. 
     $("enemy-char").on("click", function() {
+        if (debug) { console.log("enemy-char:") };
         if (!attackInProgress) {
-            // 		reset defender (if set) to enemy
-            //		move "this" character to defender
+            //      reset defender (if set) to enemy
+            //      move "this" character to defender
         }
     });
 
 
     $("attack-button").on("click", function() {
+        if (debug) { console.log("attack-button:") };
 
         attackInProgress = true; // inhibit enemy selection
 

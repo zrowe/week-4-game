@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Star Wars Game</title>
     <!-- Added link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  -->
@@ -14,61 +13,73 @@
 
 <body>
     <div class="container">
-        <div class="idle-area clearfix">
-            <h1 class="title">Star Wars RPG Game</h1>
-            <div id="character">
-                <div class="charname">Alfred-E-Neuman</div>
-                <img class="thumbnail" src="assets/images/alfred.jpg" alt="Alfred-E-Neuman">
-                <div class="hitpoints">100</div>
+        <div class="hero clearfix">
+            <div class="title">
+                <h1>Star Wars RPG Game</h1>
             </div>
-            <div id="character">
-                <div class="charname">Alfred E. Neuman</div>
-                <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
-                <div class="hitpoints">100</div>
-            </div>
-            <div id="character">
-                <div class="charname">Alfred E. Neuman</div>
-                <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
-                <div class="hitpoints">100</div>
-            </div>
-            <div id="character">
-                <div class="charname">Alfred E. Neuman</div>
-                <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
-                <div class="hitpoints">100</div>
+            <div class="idle-area">
+                <div id="character">
+                    <div class="charname">Alfred-E-Neuman</div>
+                    <img class="thumbnail" src="assets/images/alfred.jpg" alt="Alfred-E-Neuman">
+                    <div class="hitpoints">100</div>
+                </div>
+                <div id="character">
+                    <div class="charname">Alfred E. Neuman</div>
+                    <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
+                    <div class="hitpoints">100</div>
+                </div>
+                <div id="character">
+                    <div class="charname">Alfred E. Neuman</div>
+                    <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
+                    <div class="hitpoints">100</div>
+                </div>
+                <div id="character">
+                    <div class="charname">Alfred E. Neuman</div>
+                    <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
+                    <div class="hitpoints">100</div>
+                </div>
             </div>
         </div>
         <h2>Your Character</h2>
-        <div class="player-area">
-            <div id="character">
-                <div class="charname">Alfred E. Neuman</div>
-                <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
-                <div class="hitpoints">100</div>
+        <div class="hero clearfix">
+            <div class="player-area" clearfix>
+                <div id="character">
+                    <div class="charname">Alfred E. Neuman</div>
+                    <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
+                    <div class="hitpoints">100</div>
+                </div>
             </div>
         </div>
         <h2>Enemies Available to Attack</h2>
-        <div class="enemy-area">
-            <div id="character">
-                <div class="charname">Alfred E. Neuman</div>
-                <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
-                <div class="hitpoints">100</div>
+        <div class="hero clearfix">
+            <div class="enemy-area">
+                <div id="character">
+                    <div class="charname">Alfred E. Neuman</div>
+                    <img class="thumbnail" src="assets/images/alfred.jpg " alt="Alfred-E-Neuman">
+                    <div class="hitpoints">100</div>
+                </div>
             </div>
         </div>
         <h2>Fight Section</h2>
-        <button id="attack">Attack</button>
+        <button id="attack-button">Attack</button>
         <h2>Defender</h2>
-        <div class="defender-area">
-            <div id=character>
-                <div class="charname">Alfred E. Neuman</div>
-                <img class="thumbnail" src="assets/images/alfred.jpg" alt="Alfred-E-Neuman">
-                <div class="hitpoints">100</div>
+        <div class="hero clearfix">
+            <div class="defender-area">
+                <div id=character>
+                    <div class="charname">Alfred E. Neuman</div>
+                    <img class="thumbnail" src="assets/images/alfred.jpg" alt="Alfred-E-Neuman">
+                    <div class="hitpoints">100</div>
+                </div>
             </div>
-            <p>You attacked Alfred E. Nueman for 8 damage.</p>
-            <p>Alfred E. Nueman attacked you back for 25 damage</p>
-            <p>You have been defeated..... Game Over!!!</p>
-            <button id="reset-button">Restart</button>
-            <p>You have defeated Alfre E. Newman, you can choose to fight another enemy.</p>
         </div>
+        <p>You attacked Alfred E. Nueman for 8 damage.</p>
+        <p>Alfred E. Nueman attacked you back for 25 damage</p>
+        <p>You have been defeated..... Game Over!!!</p>
+        <button id="reset-button">Restart</button>
+        <p>You have defeated Alfre E. Newman, you can choose to fight another enemy.</p>
     </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
