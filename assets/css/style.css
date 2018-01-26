@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-	    font-size: 36px;
+    font-size: 36px;
     margin: 0px 0px;
 }
 
@@ -29,12 +29,13 @@ h2 {
 }
 
 .title {
-	float: right;
+    float: right;
 }
 
-.idleArea,
-.playerArea,
-.defenderArea {
+.idle-area,
+.player-area,
+.enemy-area,
+.defender-area {
     width: 100%;
     margin: 0px;
     float: left;
@@ -51,10 +52,7 @@ h2 {
 }
 
 
-#char1,
-#char2,
-#char3,
-#char4 {
+#character {
     display: inline-block;
     color: white;
     border: 2px solid white;

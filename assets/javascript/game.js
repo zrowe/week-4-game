@@ -22,10 +22,10 @@ $(document).ready(function() {
     }
 
     // load the characters
-    var charA = new Character("Alfred", "Idle", 100, 25, 10, "image.jpg");
-    var charB = new Character("Sam", "Idle", 150, 5, 5, "image.jpg");
-    var charC = new Character("Jack", "Idle", 200, 15, 5, "image.jpg");
-    var charD = new Character("Bill", "Idle", 250, 20, 10, "image.jpg");
+    var charA = new Character("Alfred", "Idle", 100, 25, 10, "alfred.jpg");
+    var charB = new Character("Sam", "Idle", 150, 5, 5, "alfred.jpg");
+    var charC = new Character("Jack", "Idle", 200, 15, 5, "alfred.jpg");
+    var charD = new Character("Bill", "Idle", 250, 20, 10, "alfred.jpg");
 
     // gather all the characters together
     var characters = [charA, charB, charC, charD];
