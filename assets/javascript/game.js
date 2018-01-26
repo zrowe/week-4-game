@@ -21,7 +21,31 @@ $(document).ready(function() {
             this.state = "idle";
             console.log(this);
         };
-    }
+    };
+
+    //  Clear all the characters and the redisplay in proper slots 
+    function updateGameBoard() {
+        if (debug) { console.log("updateGameBoard"); };
+        $(".idle-character").hide();
+        $(".player-character").hide();
+        $(".enemy-character").hide();
+        $(".defender-character").hide();
+        var idleCount = 0;
+        var enemyCount = 0;
+        for (i = 0; i < characters.length; i++) {
+            paintCharacter(characters[i]);
+        }
+    };
+    // Paint a character intro it's slot
+    function paintCharacter(character) {
+        if (debug) { console.log("paintCharacter:", character); };
+
+        // TODO:   ****Can't figureout why this is not getting written into DIV ****
+        $("#player-character").html('<div class="charname">' + character.name + '</div>' +
+            '<img class="thumbnail" src="assets/images/' + character.imageURL +' alt="Alfred-E-Neuman">' +
+            '<div class="hitpoints">' = character.currentHealthPoints = '</div>');
+        $(".player-character").show();
+    };
 
     // load the characters
     var charA = new Character("Alfred", "Idle", 100, 25, 10, "alfred.jpg");
@@ -40,55 +64,55 @@ $(document).ready(function() {
     var player; // handle if current player
     var defender; // handle of current defender
     var attackInProgress = false; // set during a player/defender action.
-    var gameInProgress = false;
+    var playerNotDead = true;
 
     // Handlers:
 
-    // Do stuff when the reset button is pressed
-    // Reset:   set all to idle
-    //                  set currentHealthPoints = baseHealthPoints
-    //                  set currentAttackPoints = baseAttackPoints 
-    //                  set gameIdle -- indicate initial state
 
-
-    $("reset-button").on("click", function() {
-        // initialize characters
-        //          set current values to base values
-        //          set state to idle
-        // initialize display
+    // initialize characters
+    $("#reset-button").on("click", function() {
         if (debug) { console.log("reset-button:") };
-        //  characters.foreach  rather use foreach.
         for (i = 0; i < characters.length; i++) {
-            i.reset();
+            characters[i].reset(); // reset each character
         }
         attackInProgress = false;
+        gameInProgress = false;
+        player = null;
+        defender = null;
+        updateGameBoard();
     });
 
 
     // Do stuff when an idle character is clicked
     // when an idle is clicked, it becomes player.  All others become enemy.
     // (no more idles)
-    $("idle-char").on("click", function() {
-        if (debug) { console.log("idle Char:") };
+    $(".idle-character").on("click", function() {
+        if (debug) { console.log("idle Char:", this) };
         // Move this.character to player.
+        // TODO:  player = this character from characters object.   
         // Move idle characters to enemy. 
+        // change selected chacter to state = player
+        // change all other idle charcters to state to enemy
+        updateGameBoard();
     });
 
 
     // Do stuff when an enemy character is clicked
     // if there are more enemies:
     //  when an enemy is clicked, it becomes defender.  other enemies remain. 
-    $("enemy-char").on("click", function() {
-        if (debug) { console.log("enemy-char:") };
+    $(".enemy-character").on("click", function() {
+        if (debug) { console.log("enemy-char:", this) };
         if (!attackInProgress) {
             //      reset defender (if set) to enemy
             //      move "this" character to defender
+            // set defender global =  char? of defender
+            updateGameBoard();
         }
     });
 
 
-    $("attack-button").on("click", function() {
-        if (debug) { console.log("attack-button:") };
+    $("#attack-button").on("click", function() {
+        if (debug) { console.log("attack-button:", this) };
 
         attackInProgress = true; // inhibit enemy selection
 
@@ -104,6 +128,9 @@ $(document).ready(function() {
                 }
             }
         }
-        // action results of the battle
+        // TODO: display proper results banners (Magic Happens).
+        
+        updateGameBoard();
+
     });
 });
